@@ -1,0 +1,13 @@
+<div *ngIf="planet">
+	<h1> Planet: {{planet.name}}</h1>
+	<div><label> id: </label> {{planet.id}}	</div> 
+	<div>
+		<label> Planet:  </label> 
+		<input [(ngModel)]="planet.description" placeholder="Notes">
+	</div>
+	<div>
+		<h1>Description</h1>
+		{{planet.description}}
+	</div>
+	<button (click)="goBack()">Back</button>
+</div>

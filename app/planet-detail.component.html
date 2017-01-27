@@ -3,11 +3,13 @@
 	<div><label> id: </label> {{planet.id}}	</div> 
 	<div>
 		<label> Planet:  </label> 
-		<input [(ngModel)]="planet.description" placeholder="Notes">
+		<input [(ngModel)]="stringExtension" placeholder="Notes">
+		<button (click)="addExtension()">Add</button>
 	</div>
 	<div>
 		<h1>Description</h1>
 		{{planet.description}}
 	</div>
+	<button (click)="save()">Save</button>
 	<button (click)="goBack()">Back</button>
 </div>

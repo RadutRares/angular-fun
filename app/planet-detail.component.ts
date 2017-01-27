@@ -15,7 +15,9 @@ import 'rxjs/add/operator/switchMap';
 
 export class PlanetDetailComponent implements OnInit {
  	@Input()
+
   	planet: Planet;
+  	stringExtension: string;
 
   	constructor(
 	  private planetService: PlanetService,
@@ -27,6 +29,15 @@ export class PlanetDetailComponent implements OnInit {
 	  this.route.params
 	    .switchMap((params: Params) => this.planetService.getPlanet(+params['id']))
 	    .subscribe(planet => this.planet = planet);
+	}
+
+	addExtension(): void {
+		this.planet.description += " " + this.stringExtension;
+	}
+
+	save(): void {
+		this.planetService.update(this.planet)
+    		.then(() => this.goBack());
 	}
 
 	goBack(): void {

@@ -9,9 +9,9 @@ export class InMemoryDataService implements InMemoryDbService {
 	  { id: 15, name: 'Reitha', description: '' },
 	  { id: 16, name: 'Sigma Externus', description: 'The largest outer world, at least in documented residents. A bustling hive of villainy.'},
 	  { id: 17, name: 'Laneth', description: 'A prominent research world. Many research stations are scattered on the surface.' },
-	  { id: 18, name: 'Dr IQ', description: '' },
-	  { id: 19, name: 'Magma', description: '' },
-	  { id: 20, name: 'Tornado', description: '' }
+	  { id: 18, name: 'Drogos', description: '' },
+	  { id: 19, name: 'Mustafar', description: '' },
+	  { id: 20, name: 'Telith', description: '' }
     ];
     return {planets};
   }

@@ -20,6 +20,14 @@ export class PlanetService {
 						.catch(this.handleError);
 	}
 
+	getPlanet(id: number): Promise<Planet> {
+		const url = `${this.planetsUrl}/${id}`;
+		return this.http.get(url)
+			.toPromise()
+			.then(response => response.json().data as Planet)
+			.catch(this.handleError);
+	}
+
 	update(planet: Planet): Promise<Planet>{
 		const url = `${this.planetsUrl}/${planet.id}`;
 		return this.http
@@ -29,16 +37,24 @@ export class PlanetService {
 			.catch(this.handleError);
 	} 
 
+	create(name: string): Promise<Planet> {
+		return this.http
+			.post(this.planetsUrl, JSON.stringify({name: name, description: ""}), {headers: this.headers})
+			.toPromise()
+			.then(res => res.json().data)
+			.catch(this.handleError)
+	}
+
+	delete(id: number): Promise<void> {
+		const url = `${this.planetsUrl}/${id}`;
+		return this.http.delete(url, {headers: this.headers})
+			.toPromise()
+			.then(() => null)
+			.catch(this.handleError);
+	}
+
 	private handleError(error: any): Promise<any>{
 		console.error('Error Occured', error);
 		return Promise.reject(error.message || error);
-	}
-
-	getPlanet(id: number): Promise<Planet> {
-		const url = `${this.planetsUrl}/${id}`;
-		return this.http.get(url)
-			.toPromise()
-			.then(response => response.json().data as Planet)
-			.catch(this.handleError);
 	}
 }

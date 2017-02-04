@@ -14,8 +14,6 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class PlanetDetailComponent implements OnInit {
- 	@Input()
-
   	planet: Planet;
   	stringExtension: string;
 

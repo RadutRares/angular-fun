@@ -34,6 +34,25 @@ export class PlanetComponent implements OnInit {
 		this.planetService.getPlanets().then(planets => this.planets = planets);
   	}
 
+  	add(name: string): void {
+	  name = name.trim();
+	  if (!name) { return; }
+	  this.planetService.create(name)
+	    .then(planet => {
+	      this.planets.push(planet);
+	      this.selectedPlanet = null;
+	    });
+	}
+
+	delete (planet: Planet): void {
+		this.planetService
+			.delete(planet.id)
+			.then(() => {
+				this.planets = this.planets.filter(p => p !== planet);
+				if (this.selectedPlanet === planet) { this.selectedPlanet = null }
+			});
+	}
+
   	gotoDetail(): void{
   		this.router.navigate(['/detail', this.selectedPlanet.id]);
   	}

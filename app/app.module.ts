@@ -1,3 +1,5 @@
+import './rxjs-extensions';
+
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
@@ -9,12 +11,12 @@ import { AppRoutingModule }   from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
-
 import { AppComponent }  from './app.component';
 
 import { PlanetDetailComponent } from './planet-detail.component';
 import { PlanetComponent } from './planet.component';
 import { PlanetService } from './planet.service';
+import { PlanetSearchComponent } from './planet-search.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component'
 
@@ -30,7 +32,8 @@ import { DashboardComponent } from './dashboard/dashboard.component'
   	AppComponent,
   	PlanetDetailComponent,
   	PlanetComponent,
-  	DashboardComponent
+  	DashboardComponent,
+    PlanetSearchComponent,
   ],
   providers: [
   	PlanetService

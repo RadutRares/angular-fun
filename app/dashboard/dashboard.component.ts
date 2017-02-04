@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Planet } from '../planet/planet'
 import { PlanetService } from '../planet.service'
+import { PlanetSearchComponent } from '../planet-search.component';
 
 @Component({
   moduleId: module.id,

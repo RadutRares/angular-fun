@@ -27,3 +27,17 @@ button:disabled {
   color: #ccc; 
   cursor: auto;
 }
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 10px;
+}
+.col-1-4 {
+  width: 25%;
+}
+.col-3-4 {
+  width: 65%;
+}

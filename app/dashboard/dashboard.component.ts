@@ -11,7 +11,7 @@ import { PlanetSearchComponent } from '../planet-search.component';
   styleUrls: [ 'dashboard.component.css' ]
 })
 
-export class DashboardComponent { 
+export class DashboardComponent {
 	planets: Planet[] = [];
 
 	constructor(private planetService: PlanetService) {}
@@ -20,6 +20,4 @@ export class DashboardComponent {
 		this.planetService.getPlanets()
 			.then(planets => this.planets = planets.slice(1,5))
 	}
-
-
 }

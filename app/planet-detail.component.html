@@ -1,13 +1,15 @@
 <div *ngIf="planet">
 	<h1> Planet: {{planet.name}}</h1>
 	<div><label> id: </label> {{planet.id}}	</div> 
-	<div class="col-3-4">
-		<label> Planet:  </label> 
-		<input [(ngModel)]="stringExtension" placeholder="Notes">
-		<button (click)="addExtension()">Add</button>
-	</div>
-	<div class="col-1-4">
-		<img [src]="planet.imageUrl">
+	<div class="container">
+		<div class="col-2-4">
+			<label> Planet:  </label> 
+			<input [(ngModel)]="stringExtension" placeholder="Notes">
+			<button (click)="addExtension()">Add</button>
+		</div>
+		<div class="col-1-4">
+			<img [src]="planet.imageUrl">
+		</div>
 	</div>
 	<div>
 		<h1>Description</h1>

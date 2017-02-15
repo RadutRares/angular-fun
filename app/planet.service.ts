@@ -4,7 +4,6 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Planet } from './planet/planet';
-import { PLANETS } from './mockdata/mock-planets';
 
 @Injectable()
 export class PlanetService {
